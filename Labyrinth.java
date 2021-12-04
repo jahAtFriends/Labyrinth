@@ -198,7 +198,7 @@ public class Labyrinth {
         int[][] directions = {UP, DOWN, LEFT, RIGHT};
         for (int i = 0; i < solution.length; i++) {
             currentSquare = nextSquare(currentSquare, directions[solution[i]]);
-            if (!isStone(currentSquare) || !isValid(currentSquare)) {
+            if (!(isValid(currentSquare) && isStone(currentSquare))) {
                 return false;
             }
         }
